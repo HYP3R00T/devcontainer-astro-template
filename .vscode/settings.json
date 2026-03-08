@@ -1,8 +1,6 @@
 {
   "explorer.excludeGitIgnore": true,
-  "chat.instructionsFilesLocations": {
-    ".github/instructions": true
-  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "github.copilot.chat.codeGeneration.useInstructionFiles": true,
   "github.copilot.chat.reviewSelection.instructions": [
     {
@@ -17,6 +15,9 @@
   },
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "chat.instructionsFilesLocations": {
+    ".github/instructions": true
   },
   "css.lint.unknownAtRules": "ignore",
   "markdownlint.configFile": ".markdownlint.yaml"
