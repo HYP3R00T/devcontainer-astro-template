@@ -1,0 +1,17 @@
+---
+title: "Textarea"
+description: "Multi-line text input component."
+category: "ui"
+---
+
+import Textarea from "@/components/ui/Textarea.astro";
+import CodeCopyButton from "@/components/core/CodeCopyButton.astro";
+
+<Textarea placeholder="Write your message" />
+
+<div style="position:relative">
+<CodeCopyButton code={`import Textarea from "@/components/ui/Textarea.astro";
+
+<Textarea placeholder="Write your message" />
+`} />
+</div>
