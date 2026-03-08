@@ -14,7 +14,7 @@ const { images, projectTitle, imageAlt } = Astro.props;
 const totalImages = images.length;
 ---
 
-<div class="relative aspect-video group min-h-60 overflow-hidden">
+<div class="relative aspect-video object-cover group min-h-60 overflow-hidden">
   <!-- Image Container -->
   <div class="image-carousel-container h-full w-full" data-total={totalImages}>
     {
@@ -26,7 +26,7 @@ const totalImages = images.length;
           <Image
             src={img}
             alt={imageAlt || `${projectTitle} - Image ${idx + 1}`}
-            class="h-full w-full object-cover"
+            class="h-full w-full object-cover my-0!"
           />
         </div>
       ))
@@ -52,7 +52,7 @@ const totalImages = images.length;
   <!-- Navigation Overlay -->
   {
     totalImages > 1 && (
-      <div class="absolute inset-0 flex items-center justify-between bg-background-0/0 p-4 opacity-0 transition-opacity duration-300 pointer-events-none group-hover:opacity-100">
+      <div class="absolute inset-0 flex items-center justify-between bg-background-0/0 p-4 opacity-100 transition-opacity duration-300 pointer-events-auto md:opacity-0 md:pointer-events-none md:group-hover:opacity-100">
         <Button
           aria-label="Previous image"
           size="icon"
