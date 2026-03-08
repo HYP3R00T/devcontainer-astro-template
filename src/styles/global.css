@@ -6,11 +6,11 @@
 :root {
   --radius: 0.5rem;
 
-  /* Background Layers - Revamp: Pure Black Theme */
+  /* Background Layers - Revamp: Pure background-0 Theme */
   --background-0: hsl(0, 0%, 0%);
-  /* pure black */
+  /* pure background-0 */
   --background-1: hsl(0, 0%, 5%);
-  /* pure black */
+  /* pure background-0 */
   --background-2: hsl(0, 0%, 10%);
   /* very dark gray for contrast */
 
@@ -30,6 +30,9 @@
 
   /* Borders */
   --border: hsl(0, 0%, 10%);
+
+  /* pattern */
+  --pattern: hsl(0, 0%, 2%);
 
   /* Colors */
   --red: hsl(0, 65%, 62%);
@@ -74,6 +77,8 @@
 
   --border: hsl(0, 0%, 90%);
 
+  --pattern: hsl(0, 0%, 97%);
+
   --red: hsl(0, 65%, 62%);
   --orange: hsl(30, 70%, 60%);
   --yellow: hsl(45, 75%, 65%);
@@ -99,6 +104,8 @@
   --accent-fg: hsl(0, 0%, 0%);
 
   --border: hsl(0, 0%, 10%);
+
+  --pattern: hsl(0, 0%, 2%);
 
   --red: hsl(0, 65%, 62%);
   --orange: hsl(30, 70%, 60%);
@@ -315,8 +322,8 @@ html.dark .astro-code span {
     45deg,
     transparent,
     transparent 10px,
-    hsl(0, 0%, 2%) 10px,
-    hsl(0, 0%, 2%) 20px
+    var(--pattern) 10px,
+    var(--pattern) 20px
   );
 }
 
@@ -325,8 +332,8 @@ html.dark .astro-code span {
     45deg,
     transparent,
     transparent 2px,
-    hsl(0, 0%, 2%) 2px,
-    hsl(0, 0%, 2%) 4px
+    var(--pattern) 2px,
+    var(--pattern) 4px
   );
 }
 

@@ -9,7 +9,7 @@ import Button from "@/components/ui/Button.astro";
   type="button"
   variant="secondary"
   size="icon"
-  className="relative"
+  class="relative"
   aria-label="Toggle theme"
 >
   <Icon
@@ -33,18 +33,26 @@ import Button from "@/components/ui/Button.astro";
   function applyTheme(theme: Theme): void {
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
+      document.documentElement.classList.remove("light");
     } else {
+      document.documentElement.classList.add("light");
       document.documentElement.classList.remove("dark");
     }
     localStorage.setItem("theme", theme);
   }
 
-  export function initTheme(): void {
+  function initTheme(): void {
     const toggle = document.getElementById("theme-toggle");
     if (!toggle) return;
 
+    // Apply saved theme on load
     applyTheme(getTheme());
 
+    // Prevent duplicate listeners
+    if (toggle.dataset.initialized) return;
+    toggle.dataset.initialized = "true";
+
+    // Toggle theme on click
     toggle.addEventListener("click", () => {
       const current = document.documentElement.classList.contains("dark")
         ? "dark"
@@ -53,6 +61,11 @@ import Button from "@/components/ui/Button.astro";
     });
   }
 
-  initTheme();
+  // Initialize on DOM ready and after page swaps
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initTheme);
+  } else {
+    initTheme();
+  }
   document.addEventListener("astro:after-swap", initTheme);
 </script>
