@@ -281,6 +281,6 @@ html.dark .astro-code span {
 /* Typography Utility Classes */
 @layer utilities {
   .text-section-heading {
-    @apply text-foreground-0 mb-8 text-left font-mono text-[clamp(3rem, 10vw, 7rem)] leading-[0.9] font-bold tracking-tighter uppercase;
+    @apply text-foreground-0 mb-8 text-left font-mono text-[clamp(3rem,_10vw,_7rem)] leading-[0.9] font-bold tracking-tighter uppercase;
   }
 }
