@@ -1,4 +1,4 @@
-import setupImage from '@/assets/setup.png'
+import placeholder1 from '@/assets/placeholder1.png'
 import type { NavItem, SiteConfig } from '@/lib/types'
 
 export const SITE: SiteConfig = {
@@ -8,7 +8,7 @@ export const SITE: SiteConfig = {
   title: 'Rajesh Das',
   description:
     "A portfolio and blog showcasing Rajesh's skills in DevOps, Python, and Cloud.",
-  image: setupImage,
+  image: placeholder1,
   imageAlt: 'Check out rajeshdas.dev',
   contentType: 'Portfolio',
   twitterHandle: '@HYP3R00T',
