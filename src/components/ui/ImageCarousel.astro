@@ -1,17 +1,17 @@
 ---
-import { Image } from 'astro:assets'
-import type { ImageMetadata } from 'astro'
-import { Icon } from 'astro-icon/components'
-import Button from '@/components/ui/Button.astro'
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import { Icon } from "astro-icon/components";
+import Button from "@/components/ui/Button.astro";
 
 interface Props {
-  images: ImageMetadata[]
-  projectTitle: string
-  imageAlt?: string
+  images: ImageMetadata[];
+  projectTitle: string;
+  imageAlt?: string;
 }
 
-const { images, projectTitle, imageAlt } = Astro.props
-const totalImages = images.length
+const { images, projectTitle, imageAlt } = Astro.props;
+const totalImages = images.length;
 ---
 
 <div class="relative h-full min-h-60 overflow-hidden">

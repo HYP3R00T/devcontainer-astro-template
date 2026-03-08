@@ -1,31 +1,31 @@
 ---
-import type { HTMLAttributes } from 'astro/types'
+import type { HTMLAttributes } from "astro/types";
 
 type InputType =
-  | 'text'
-  | 'email'
-  | 'password'
-  | 'number'
-  | 'tel'
-  | 'url'
-  | 'search'
-  | 'date'
-  | 'time'
+  | "text"
+  | "email"
+  | "password"
+  | "number"
+  | "tel"
+  | "url"
+  | "search"
+  | "date"
+  | "time";
 
-interface InputProps extends HTMLAttributes<'input'> {
-  type?: InputType
-  placeholder?: string
-  disabled?: boolean
-  class?: string
-  value?: string | number
-  name?: string
-  id?: string
-  required?: boolean
+interface InputProps extends HTMLAttributes<"input"> {
+  type?: InputType;
+  placeholder?: string;
+  disabled?: boolean;
+  class?: string;
+  value?: string | number;
+  name?: string;
+  id?: string;
+  required?: boolean;
 }
 
 const {
-  type = 'text',
-  placeholder = '',
+  type = "text",
+  placeholder = "",
   disabled = false,
   class: className,
   value,
@@ -33,16 +33,16 @@ const {
   id,
   required = false,
   ...rest
-} = Astro.props as InputProps
+} = Astro.props as InputProps;
 
 const baseClasses =
-  'w-full border bg-transparent px-4 py-4 text-sm transition-colors focus:outline-none'
+  "w-full border bg-transparent px-4 py-4 text-sm transition-colors focus:outline-none";
 
-const borderClasses = 'border-border'
-const textClasses = 'text-foreground-0'
-const placeholderClasses = 'placeholder:text-foreground-3'
-const focusClasses = 'focus:border-foreground-0'
-const disabledClasses = disabled ? 'opacity-50 cursor-not-allowed' : ''
+const borderClasses = "border-border";
+const textClasses = "text-foreground-0";
+const placeholderClasses = "placeholder:text-foreground-3";
+const focusClasses = "focus:border-foreground-0";
+const disabledClasses = disabled ? "opacity-50 cursor-not-allowed" : "";
 
 const classes = [
   baseClasses,
@@ -54,7 +54,7 @@ const classes = [
   className?.trim(),
 ]
   .filter(Boolean)
-  .join(' ')
+  .join(" ");
 ---
 
 <input

@@ -1,19 +1,19 @@
 ---
-import { Icon } from 'astro-icon/components'
-import ButtonComponent from '@/components/ui/Button.astro'
-import BaseLayout from '@/layouts/BaseLayout.astro'
+import { Icon } from "astro-icon/components";
+import ButtonComponent from "@/components/ui/Button.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 
 export const metadata = {
-  title: 'Button',
-  description: 'Core button variants and sizes.',
-  category: 'ui',
+  title: "Button",
+  description: "Core button variants and sizes.",
+  category: "ui",
   order: 1,
-}
+};
 
-const variantOptions = ['default', 'secondary', 'outline', 'ghost', 'link']
+const variantOptions = ["default", "secondary", "outline", "ghost", "link"];
 
-const textSizes = ['sm', 'default', 'lg']
-const iconSizes = ['icon-sm', 'icon', 'icon-lg']
+const textSizes = ["sm", "default", "lg"];
+const iconSizes = ["icon-sm", "icon", "icon-lg"];
 ---
 
 <BaseLayout

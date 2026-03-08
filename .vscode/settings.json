@@ -11,7 +11,7 @@
     }
   ],
   "[astro]": {
-    "editor.defaultFormatter": "biomejs.biome"
+    "editor.defaultFormatter": "astro-build.astro-vscode"
   },
   "[markdown]": {
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
