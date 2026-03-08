@@ -1,11 +1,5 @@
 import setupImage from "@/assets/setup.png";
-import type {
-  NavItem,
-  SiteConfig,
-  SocialObjects,
-  FooterNavItem,
-  FooterSocialLink,
-} from "@/lib/types";
+import type { NavItem, SiteConfig } from "@/lib/types";
 
 export const SITE: SiteConfig = {
   website: "https://rajeshdas.dev",
