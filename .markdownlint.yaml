@@ -1,4 +1,6 @@
 # Markdownlint configuration
+# See https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md for rule descriptions
+
 default: true
 
 # MD010/no-hard-tabs : Hard tabs
@@ -21,13 +23,32 @@ MD029:
 
 # MD033/no-inline-html - Inline HTML
 MD033:
-  allowed_elements: [a, pre, br]
+  allowed_elements:
+    [
+      a,
+      pre,
+      br,
+      Video,
+      Icon,
+      BadgeComponent,
+      ButtonComponent,
+      ImageCarouselComponent,
+      InputComponent,
+      LabelComponent,
+      TextareaComponent,
+    ]
+
+# MD034/no-bare-urls
+MD034: false
 
 # MD036/no-emphasis-as-heading
 MD036: false
 
 # MD046/code-block-style
 MD046: false
+
+# MD059/descriptive-link-text
+MD059: false
 
 # MD060/table-column-style : Table column style
 MD060: false

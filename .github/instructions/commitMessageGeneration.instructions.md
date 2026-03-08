@@ -8,7 +8,9 @@ Follow Conventional Commits specification (conventionalcommits.org).
 <type>(<scope>): <description>
 ```
 
-**Type** describes the nature of the change. **Scope** (optional) identifies which component is affected. **Description** explains what changed, in imperative mood, under 72 characters.
+- **Type**: describes the nature of the change.
+- **Scope**: (optional) identifies which component is affected.
+- **Description**: explains what changed, in imperative mood, under 72 characters.
 
 ## Choosing the Type
 
