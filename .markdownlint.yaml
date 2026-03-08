@@ -35,6 +35,7 @@ MD033:
       ImageCarouselComponent,
       InputComponent,
       LabelComponent,
+      TextareaComponent,
     ]
 
 # MD034/no-bare-urls
