@@ -1,10 +1,10 @@
 ---
-import type { HTMLAttributes } from "astro/types";
+import type { HTMLAttributes } from 'astro/types'
 
-interface LabelProps extends HTMLAttributes<"label"> {
-  for?: string;
-  required?: boolean;
-  class?: string;
+interface LabelProps extends HTMLAttributes<'label'> {
+  for?: string
+  required?: boolean
+  class?: string
 }
 
 const {
@@ -12,11 +12,11 @@ const {
   required = false,
   class: className,
   ...rest
-} = Astro.props as LabelProps;
+} = Astro.props as LabelProps
 
-const baseClasses = "text-section-label mb-3 block";
+const baseClasses = 'text-section-label mb-3 block'
 
-const classes = [baseClasses, className?.trim()].filter(Boolean).join(" ");
+const classes = [baseClasses, className?.trim()].filter(Boolean).join(' ')
 ---
 
 <label for={htmlFor} class={classes} {...rest}>

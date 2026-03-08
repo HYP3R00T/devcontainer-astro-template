@@ -1,17 +1,17 @@
 ---
-import { getImage } from "astro:assets";
-import { ClientRouter } from "astro:transitions";
+import { getImage } from 'astro:assets'
+import { ClientRouter } from 'astro:transitions'
 
-import "@/styles/global.css";
+import '@/styles/global.css'
 // Supports weights 100-900
-import "@fontsource-variable/inter";
+import '@fontsource-variable/inter'
 // Supports weights 100-800
-import "@fontsource-variable/jetbrains-mono";
+import '@fontsource-variable/jetbrains-mono'
 // Supports weights 300-700
-import "@fontsource-variable/space-grotesk";
+import '@fontsource-variable/space-grotesk'
 
-import { SITE } from "@data/config";
-import type { HeadSEOProps } from "@/lib/types";
+import { SITE } from '@data/config'
+import type { HeadSEOProps } from '@/lib/types'
 
 // Props with fallbacks from SITE config
 const {
@@ -21,47 +21,47 @@ const {
   imageAlt = SITE.imageAlt,
   contentType = SITE.contentType,
   noIndex = false,
-} = Astro.props as HeadSEOProps;
+} = Astro.props as HeadSEOProps
 
-const canonicalURL = new URL(Astro.url);
+const canonicalURL = new URL(Astro.url)
 // Prefer configured site URL when Astro.site isn't available (e.g., in dev)
-const siteUrl = Astro.site ?? SITE.website ?? "http://127.0.0.1:4321";
+const siteUrl = Astro.site ?? SITE.website ?? 'http://127.0.0.1:4321'
 
 // Generate a fully qualified OG image URL
-let ogImageUrl: string;
+let ogImageUrl: string
 
-if (typeof image === "object" && "src" in image) {
+if (typeof image === 'object' && 'src' in image) {
   // Case 1: Imported asset or content collection image()
   try {
     const { src } = await getImage({
       src: image,
       width: 1200,
       height: 630,
-      format: "jpeg",
+      format: 'jpeg',
       quality: 70,
-    });
-    ogImageUrl = new URL(src, siteUrl).toString();
+    })
+    ogImageUrl = new URL(src, siteUrl).toString()
   } catch {
-    ogImageUrl = new URL(image.src, siteUrl).toString();
+    ogImageUrl = new URL(image.src, siteUrl).toString()
   }
-} else if (typeof image === "string" && !image.startsWith("http")) {
+} else if (typeof image === 'string' && !image.startsWith('http')) {
   // Case 2: Local relative path (blogs/assets or similar)
   try {
     const { src } = await getImage({
       src: image,
       width: 1200,
       height: 630,
-      format: "jpeg",
+      format: 'jpeg',
       quality: 70,
-    });
-    ogImageUrl = new URL(src, siteUrl).toString();
+    })
+    ogImageUrl = new URL(src, siteUrl).toString()
   } catch {
     // Fallback: just prefix with siteUrl if optimization fails
-    ogImageUrl = new URL(image, siteUrl).toString();
+    ogImageUrl = new URL(image, siteUrl).toString()
   }
 } else {
   // Case 3: External full URL
-  ogImageUrl = image;
+  ogImageUrl = image
 }
 ---
 
