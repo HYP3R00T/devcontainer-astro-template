@@ -34,22 +34,37 @@ const totalImages = images.length;
     }
   </div>
 
-  <!-- Navigation Overlay (visible on image hover) -->
+  <!-- Edge Tick Indicator -->
   {
     totalImages > 1 && (
-      <div class="absolute inset-0 flex items-center justify-between bg-black/0 p-4 opacity-0 transition-opacity duration-300 pointer-events-none group-hover:opacity-100">
+      <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+        {images.map((_, idx) => (
+          <span
+            class={`carousel-tick h-0.5 w-6 bg-foreground-0/30 ${
+              idx === 0 ? "bg-foreground-0" : ""
+            }`}
+            data-index={idx}
+          />
+        ))}
+      </div>
+    )
+  }
+
+  <!-- Navigation Overlay -->
+  {
+    totalImages > 1 && (
+      <div class="absolute inset-0 flex items-center justify-between bg-background-0/0 p-4 opacity-0 transition-opacity duration-300 pointer-events-none group-hover:opacity-100">
         <Button
           aria-label="Previous image"
-          data-carousel-container=".image-carousel-container"
           size="icon"
           variant="ghost"
           class="carousel-prev pointer-events-auto self-center"
         >
           <Icon name="arrow-left" class="text-foreground-0 size-6" />
         </Button>
+
         <Button
           aria-label="Next image"
-          data-carousel-container=".image-carousel-container"
           size="icon"
           variant="ghost"
           class="carousel-next pointer-events-auto self-center"
@@ -63,37 +78,47 @@ const totalImages = images.length;
 
 <script>
   document.addEventListener("astro:page-load", () => {
-    // Find all carousel containers on the page
-    const carousels = document.querySelectorAll(".image-carousel-container");
+    const carousels = document.querySelectorAll<HTMLElement>(
+      ".image-carousel-container",
+    );
 
     carousels.forEach((carousel) => {
       let currentIndex = 0;
+
       const totalSlides = parseInt(
         carousel.getAttribute("data-total") ?? "1",
         10,
       );
-      const slides = carousel.querySelectorAll(".carousel-slide");
 
-      // Find the navigation buttons for this carousel
-      const navContainer = carousel.parentElement;
-      const prevBtn = navContainer?.querySelector(".carousel-prev");
-      const nextBtn = navContainer?.querySelector(".carousel-next");
-      const counterCurrent = navContainer?.querySelector(
-        ".carousel-counter-current",
-      );
+      const slides = carousel.querySelectorAll<HTMLElement>(".carousel-slide");
+
+      const navContainer = carousel.parentElement as HTMLElement | null;
+
+      const prevBtn =
+        navContainer?.querySelector<HTMLElement>(".carousel-prev");
+      const nextBtn =
+        navContainer?.querySelector<HTMLElement>(".carousel-next");
+
+      const ticks =
+        navContainer?.querySelectorAll<HTMLElement>(".carousel-tick");
 
       function updateCarousel() {
-        // Hide all slides
         slides.forEach((slide) => {
-          (slide as HTMLElement).style.display = "none";
+          slide.style.display = "none";
         });
 
-        // Show current slide
-        (slides[currentIndex] as HTMLElement).style.display = "block";
+        slides[currentIndex].style.display = "block";
 
-        // Update counter
-        if (counterCurrent) {
-          counterCurrent.textContent = String(currentIndex + 1);
+        if (ticks) {
+          ticks.forEach((tick, idx) => {
+            tick.classList.remove("bg-foreground-0");
+            tick.classList.add("bg-foreground-0/30");
+
+            if (idx === currentIndex) {
+              tick.classList.remove("bg-foreground-0/30");
+              tick.classList.add("bg-foreground-0");
+            }
+          });
         }
       }
 
@@ -107,9 +132,10 @@ const totalImages = images.length;
         updateCarousel();
       }
 
-      // Attach event listeners
       prevBtn?.addEventListener("click", goToPrev);
       nextBtn?.addEventListener("click", goToNext);
+
+      updateCarousel();
     });
   });
 </script>
