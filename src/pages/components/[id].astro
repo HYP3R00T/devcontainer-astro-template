@@ -25,7 +25,7 @@ const { Content } = await render(entry);
   >
     <div class="mx-auto w-full max-w-7xl">
       <header class="mb-6">
-        <h1 class="text-foreground-0 text-4xl font-extrabold font-display">
+        <h1 class="text-section-heading my-8">
           {entry.data.title}
         </h1>
         {
@@ -36,7 +36,7 @@ const { Content } = await render(entry);
           )
         }
       </header>
-      <div>
+      <div class="prose">
         <Content />
       </div>
     </div>
