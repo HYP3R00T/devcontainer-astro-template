@@ -23,7 +23,7 @@
         "unifiedjs.vscode-mdx",
         "esbenp.prettier-vscode",
         "hyperoot.settings-organizer",
-        "dbaeumer.vscode-eslint"
+        "biomejs.biome"
       ]
     }
   }
