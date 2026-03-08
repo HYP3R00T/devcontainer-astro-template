@@ -20,29 +20,31 @@ const variants = [
   title={`${metadata.title} - Components`}
   description={metadata.description}
 >
-  <main class="mx-auto max-w-4xl space-y-10 px-6 py-16 md:px-12">
-    <header>
+  <section
+    class="relative flex items-center justify-center bg-black px-4 py-12 md:px-12"
+  >
+    <div class="mx-auto w-full max-w-7xl">
       <h1
         class="text-foreground-0 text-4xl font-extrabold uppercase"
         style="font-family: 'Space Grotesk', sans-serif;"
       >
         {metadata.title}
       </h1>
-    </header>
 
-    <section class="space-y-4">
-      <h2 class="text-foreground-1 text-sm tracking-wide uppercase">
-        Variants
-      </h2>
-      <div class="flex flex-wrap gap-3">
-        {
-          variants.map((variant) => (
-            <BadgeComponent variant={variant.value}>
-              {variant.label}
-            </BadgeComponent>
-          ))
-        }
-      </div>
-    </section>
-  </main>
+      <section class="space-y-4">
+        <h2 class="text-foreground-1 text-sm tracking-wide uppercase">
+          Variants
+        </h2>
+        <div class="flex flex-wrap gap-3">
+          {
+            variants.map((variant) => (
+              <BadgeComponent variant={variant.value}>
+                {variant.label}
+              </BadgeComponent>
+            ))
+          }
+        </div>
+      </section>
+    </div>
+  </section>
 </BaseLayout>

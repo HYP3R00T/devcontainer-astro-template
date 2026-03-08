@@ -15,36 +15,42 @@ export const metadata = {
   title={`${metadata.title} - Components`}
   description={metadata.description}
 >
-  <main class="mx-auto max-w-4xl space-y-10 px-6 py-16 md:px-12">
-    <header>
+  <section
+    class="relative flex items-center justify-center bg-black px-4 py-12 md:px-12"
+  >
+    <div class="mx-auto w-full max-w-7xl">
       <h1
         class="text-foreground-0 text-4xl font-extrabold uppercase"
         style="font-family: 'Space Grotesk', sans-serif;"
       >
         {metadata.title}
       </h1>
-    </header>
 
-    <section class="space-y-4">
-      <h2 class="text-foreground-1 text-sm tracking-wide uppercase">Default</h2>
-      <div class="space-y-2">
-        <LabelComponent for="label-default">Email</LabelComponent>
-        <InputComponent id="label-default" placeholder="you@example.com" />
-      </div>
-    </section>
+      <section class="space-y-4">
+        <h2 class="text-foreground-1 text-sm tracking-wide uppercase">
+          Default
+        </h2>
+        <div class="space-y-2">
+          <LabelComponent for="label-default">Email</LabelComponent>
+          <InputComponent id="label-default" placeholder="you@example.com" />
+        </div>
+      </section>
 
-    <section class="space-y-4">
-      <h2 class="text-foreground-1 text-sm tracking-wide uppercase">
-        Required
-      </h2>
-      <div class="space-y-2">
-        <LabelComponent for="label-required" required>Full name</LabelComponent>
-        <InputComponent
-          id="label-required"
-          placeholder="Enter your name"
-          required
-        />
-      </div>
-    </section>
-  </main>
+      <section class="space-y-4">
+        <h2 class="text-foreground-1 text-sm tracking-wide uppercase">
+          Required
+        </h2>
+        <div class="space-y-2">
+          <LabelComponent for="label-required" required
+            >Full name</LabelComponent
+          >
+          <InputComponent
+            id="label-required"
+            placeholder="Enter your name"
+            required
+          />
+        </div>
+      </section>
+    </div>
+  </section>
 </BaseLayout>
