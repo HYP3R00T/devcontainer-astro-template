@@ -22,7 +22,8 @@
         "github.vscode-github-actions",
         "unifiedjs.vscode-mdx",
         "esbenp.prettier-vscode",
-        "hyperoot.settings-organizer"
+        "hyperoot.settings-organizer",
+        "dbaeumer.vscode-eslint"
       ]
     }
   }
