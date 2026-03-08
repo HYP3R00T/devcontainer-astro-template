@@ -25,9 +25,9 @@
   /* subtle text / numbers */
 
   /* Accent palette (editable) */
-  --accent: hsl(256, 100%, 65%); /* neon purple */
-  --accent-2: hsl(191, 100%, 50%); /* cyan */
-  --accent-3: hsl(338, 100%, 72%); /* pink */
+  --accent: hsl(256, 100%, 70%); /* neon purple */
+  --accent-2: hsl(191, 100%, 70%); /* cyan */
+  --accent-3: hsl(338, 100%, 70%); /* pink */
 
   /* Borders */
   --border: hsl(0, 0%, 10%);
@@ -73,9 +73,9 @@
   --foreground-2: hsl(0, 0%, 40%);
   --foreground-3: hsl(0, 0%, 60%);
 
-  --accent: hsl(256, 100%, 65%);
-  --accent-2: hsl(191, 100%, 50%);
-  --accent-3: hsl(338, 100%, 72%);
+  --accent: hsl(256, 100%, 40%);
+  --accent-2: hsl(191, 100%, 40%);
+  --accent-3: hsl(338, 100%, 40%);
 
   --border: hsl(0, 0%, 90%);
 
