@@ -28,9 +28,7 @@
     "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "globals": "^17.4.0",
-    "prettier": "^3.8.1",
-    "prettier-plugin-astro": "0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.14"
+    "@biomejs/biome": "2.4.6",
+    "globals": "^17.4.0"
   }
 }
