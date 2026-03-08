@@ -59,6 +59,58 @@
   --plyr-color-main: var(--accent);
 }
 
+.light {
+  --background-0: hsl(0, 0%, 100%);
+  --background-1: hsl(0, 0%, 95%);
+  --background-2: hsl(0, 0%, 80%);
+
+  --foreground-0: hsl(0, 0%, 0%);
+  --foreground-1: hsl(0, 0%, 20%);
+  --foreground-2: hsl(0, 0%, 40%);
+  --foreground-3: hsl(0, 0%, 60%);
+
+  --accent: hsl(0, 0%, 0%);
+  --accent-fg: hsl(0, 0%, 100%);
+
+  --border: hsl(0, 0%, 90%);
+
+  --red: hsl(0, 65%, 62%);
+  --orange: hsl(30, 70%, 60%);
+  --yellow: hsl(45, 75%, 65%);
+  --green: hsl(130, 40%, 55%);
+  --teal: hsl(165, 45%, 53%);
+  --cyan: hsl(185, 50%, 60%);
+  --blue: hsl(210, 70%, 63%);
+  --purple: hsl(270, 60%, 65%);
+  --pink: hsl(330, 65%, 67%);
+}
+
+.dark {
+  --background-0: hsl(0, 0%, 0%);
+  --background-1: hsl(0, 0%, 5%);
+  --background-2: hsl(0, 0%, 10%);
+
+  --foreground-0: hsl(0, 0%, 100%);
+  --foreground-1: hsl(0, 0%, 80%);
+  --foreground-2: hsl(0, 0%, 60%);
+  --foreground-3: hsl(0, 0%, 40%);
+
+  --accent: hsl(0, 0%, 100%);
+  --accent-fg: hsl(0, 0%, 0%);
+
+  --border: hsl(0, 0%, 10%);
+
+  --red: hsl(0, 65%, 62%);
+  --orange: hsl(30, 70%, 60%);
+  --yellow: hsl(45, 75%, 65%);
+  --green: hsl(130, 40%, 55%);
+  --teal: hsl(165, 45%, 53%);
+  --cyan: hsl(185, 50%, 60%);
+  --blue: hsl(210, 70%, 63%);
+  --purple: hsl(270, 60%, 65%);
+  --pink: hsl(330, 65%, 67%);
+}
+
 @theme inline {
   /* Radii */
   --radius-sm: calc(var(--radius) - 4px);

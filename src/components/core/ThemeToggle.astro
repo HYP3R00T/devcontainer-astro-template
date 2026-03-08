@@ -1,0 +1,58 @@
+---
+import { Icon } from "astro-icon/components";
+
+import Button from "@/components/ui/Button.astro";
+---
+
+<Button
+  id="theme-toggle"
+  type="button"
+  variant="secondary"
+  size="icon"
+  className="relative"
+  aria-label="Toggle theme"
+>
+  <Icon
+    name="toggle"
+    class="transition-transform duration-200 dark:rotate-180"
+  />
+  <span class="sr-only">Toggle theme</span>
+</Button>
+
+<script>
+  type Theme = "light" | "dark";
+
+  function getTheme(): Theme {
+    if (typeof localStorage !== "undefined") {
+      const stored = localStorage.getItem("theme");
+      if (stored === "light" || stored === "dark") return stored;
+    }
+    return "dark";
+  }
+
+  function applyTheme(theme: Theme): void {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    localStorage.setItem("theme", theme);
+  }
+
+  export function initTheme(): void {
+    const toggle = document.getElementById("theme-toggle");
+    if (!toggle) return;
+
+    applyTheme(getTheme());
+
+    toggle.addEventListener("click", () => {
+      const current = document.documentElement.classList.contains("dark")
+        ? "dark"
+        : "light";
+      applyTheme(current === "dark" ? "light" : "dark");
+    });
+  }
+
+  initTheme();
+  document.addEventListener("astro:after-swap", initTheme);
+</script>
