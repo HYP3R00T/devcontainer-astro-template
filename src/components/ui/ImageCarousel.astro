@@ -20,9 +20,8 @@ const totalImages = images.length;
     {
       images.map((img, idx) => (
         <div
-          class="carousel-slide absolute inset-0"
+          class={`carousel-slide absolute inset-0 ${idx === 0 ? "is-active" : ""}`}
           data-index={idx}
-          style={`display: ${idx === 0 ? "block" : "none"}`}
         >
           <Image
             src={img}
@@ -76,11 +75,22 @@ const totalImages = images.length;
   }
 </div>
 
+<style>
+  .carousel-slide {
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+    pointer-events: none;
+  }
+
+  .carousel-slide.is-active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+</style>
+
 <script>
   document.addEventListener("astro:page-load", () => {
-    const carousels = document.querySelectorAll<HTMLElement>(
-      ".image-carousel-container",
-    );
+    const carousels = document.querySelectorAll(".image-carousel-container");
 
     carousels.forEach((carousel) => {
       let currentIndex = 0;
@@ -90,24 +100,23 @@ const totalImages = images.length;
         10,
       );
 
-      const slides = carousel.querySelectorAll<HTMLElement>(".carousel-slide");
+      const slides = carousel.querySelectorAll(".carousel-slide");
 
-      const navContainer = carousel.parentElement as HTMLElement | null;
+      const navContainer = carousel.parentElement;
 
-      const prevBtn =
-        navContainer?.querySelector<HTMLElement>(".carousel-prev");
-      const nextBtn =
-        navContainer?.querySelector<HTMLElement>(".carousel-next");
+      const prevBtn = navContainer?.querySelector(".carousel-prev");
+      const nextBtn = navContainer?.querySelector(".carousel-next");
 
-      const ticks =
-        navContainer?.querySelectorAll<HTMLElement>(".carousel-tick");
+      const ticks = navContainer?.querySelectorAll(".carousel-tick");
 
       function updateCarousel() {
-        slides.forEach((slide) => {
-          slide.style.display = "none";
-        });
+        slides.forEach((slide, idx) => {
+          slide.classList.remove("is-active");
 
-        slides[currentIndex].style.display = "block";
+          if (idx === currentIndex) {
+            slide.classList.add("is-active");
+          }
+        });
 
         if (ticks) {
           ticks.forEach((tick, idx) => {
