@@ -26,14 +26,14 @@ const {
   type={type}
   disabled={disabled}
   class:list={[
-    "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 disabled:pointer-events-none disabled:opacity-50",
+    "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium leading-none transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 disabled:pointer-events-none disabled:opacity-50",
     {
-      "h-8 px-3 text-xs": size === "sm",
-      "h-10 px-6 text-sm": size === "default",
-      "h-14 px-10 text-lg": size === "lg",
-      "size-10 p-0 shrink-0": size === "icon",
-      "size-8 p-0 shrink-0": size === "icon-sm",
-      "size-14 p-0 shrink-0": size === "icon-lg",
+      "text-xs px-3 py-1.5": size === "sm",
+      "text-sm px-4 py-2": size === "default",
+      "text-base px-6 py-3": size === "lg",
+      "size-8 p-0 shrink-0 [&>svg]:size-4": size === "icon-sm",
+      "size-10 p-0 shrink-0 [&>svg]:size-5": size === "icon",
+      "size-14 p-0 shrink-0 [&>svg]:size-6": size === "icon-lg",
     },
     {
       "bg-foreground-0 text-background-0 hover:bg-background-0 hover:text-foreground-0 border border-foreground-0":
