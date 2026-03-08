@@ -24,9 +24,10 @@
   --foreground-3: hsl(0, 0%, 40%);
   /* subtle text / numbers */
 
-  /* Accent - Revamp: White only */
-  --accent: hsl(0, 0%, 100%);
-  --accent-fg: hsl(0, 0%, 0%);
+  /* Accent palette (editable) */
+  --accent: hsl(256, 100%, 65%); /* neon purple */
+  --accent-2: hsl(191, 100%, 50%); /* cyan */
+  --accent-3: hsl(338, 100%, 72%); /* pink */
 
   /* Borders */
   --border: hsl(0, 0%, 10%);
@@ -72,8 +73,9 @@
   --foreground-2: hsl(0, 0%, 40%);
   --foreground-3: hsl(0, 0%, 60%);
 
-  --accent: hsl(0, 0%, 0%);
-  --accent-fg: hsl(0, 0%, 100%);
+  --accent: hsl(256, 100%, 65%);
+  --accent-2: hsl(191, 100%, 50%);
+  --accent-3: hsl(338, 100%, 72%);
 
   --border: hsl(0, 0%, 90%);
 
@@ -100,8 +102,9 @@
   --foreground-2: hsl(0, 0%, 60%);
   --foreground-3: hsl(0, 0%, 40%);
 
-  --accent: hsl(0, 0%, 100%);
-  --accent-fg: hsl(0, 0%, 0%);
+  --accent: hsl(256, 100%, 70%);
+  --accent-2: hsl(191, 100%, 70%);
+  --accent-3: hsl(338, 100%, 70%);
 
   --border: hsl(0, 0%, 10%);
 
@@ -134,7 +137,8 @@
   --color-foreground-2: var(--foreground-2);
   --color-foreground-3: var(--foreground-3);
   --color-accent: var(--accent);
-  --color-accent-fg: var(--accent-fg);
+  --color-accent-2: var(--accent-2);
+  --color-accent-3: var(--accent-3);
   --color-border: var(--border);
 
   /* Named colors */
