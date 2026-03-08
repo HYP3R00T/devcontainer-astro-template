@@ -5,7 +5,6 @@ import CodeCopyButton from "@/components/core/CodeCopyButton.astro";
 
 import { SITE } from "@data/config";
 import type { BaseLayoutProps } from "@/lib/types";
-import Footer from "@/components/core/Footer.astro";
 
 const { title, description, image, imageAlt, contentType } =
   Astro.props as BaseLayoutProps;
@@ -31,7 +30,6 @@ const { title, description, image, imageAlt, contentType } =
         </div>
       </main>
     </div>
-    <Footer />
     <CodeCopyButton />
   </body>
 </html>

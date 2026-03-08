@@ -1,4 +1,3 @@
-import { settings } from "astro/runtime/client/dev-toolbar/settings.js";
 import Plyr from "plyr";
 
 export default () => {
