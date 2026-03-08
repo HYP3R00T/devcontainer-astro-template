@@ -13,3 +13,10 @@ repos:
     hooks:
       - id: commitizen
         stages: [commit-msg]
+  - repo: https://github.com/biomejs/pre-commit
+    rev: v2.4.6
+    hooks:
+      - id: biome-ci
+      - id: biome-check
+      - id: biome-format
+      - id: biome-lint
