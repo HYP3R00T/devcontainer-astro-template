@@ -19,10 +19,10 @@ const {
   class:list={[
     "inline-block px-3 py-1 text-xs font-medium tracking-wide uppercase w-fit",
     {
-      "text-foreground-2": variant === "default",
-      "border border-border bg-transparent text-foreground-2":
+      "text-foreground-1": variant === "default",
+      "border border-border bg-transparent text-foreground-1":
         variant === "outline",
-      "bg-accent text-accent-fg border border-accent": variant === "accent",
+      "bg-accent text-background-0 border border-accent": variant === "accent",
     },
     className?.trim(),
   ]}
