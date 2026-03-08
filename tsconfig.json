@@ -13,7 +13,15 @@
     "paths": {
       "@/*": [
         "./src/*"
+      ],
+      "@posts/*": [
+        "./content/posts/*"
+      ],
+      "@data/*": [
+        "./data/*"
       ]
-    }
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }
