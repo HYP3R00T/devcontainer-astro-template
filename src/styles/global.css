@@ -207,7 +207,7 @@
   }
 
   .prose code {
-    @apply bg-background-2 px-1.5 py-0.5 font-mono text-base font-medium;
+    @apply bg-background-2 px-1.5 py-0.5 font-mono text-sm font-medium;
   }
 
   .prose pre code {
@@ -218,9 +218,9 @@
     @apply bg-background-2 my-8 overflow-x-auto px-6 py-5 text-base leading-relaxed;
   }
 
-  .astro-code {
+  /* .astro-code {
     @apply bg-background-2 my-8 px-6 py-5 font-mono text-base;
-  }
+  } */
 
   .prose table {
     @apply my-8 w-full border-collapse font-sans text-base;
