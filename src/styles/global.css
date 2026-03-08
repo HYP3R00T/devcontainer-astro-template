@@ -254,6 +254,11 @@
     @apply font-sans leading-relaxed;
   }
 
+  .prose li ul,
+  .prose li ol {
+    @apply mt-2 mb-0;
+  }
+
   .prose blockquote {
     @apply border-accent bg-background-2 text-foreground-0 my-8 border-l-4 px-6 py-4;
   }
