@@ -3,11 +3,6 @@
     "astro": {
       "url": "https://mcp.docs.astro.build/mcp",
       "type": "http"
-    },
-    "eslint": {
-      "type": "stdio",
-      "command": "npx",
-      "args": ["@eslint/mcp@latest"]
     }
   }
 }

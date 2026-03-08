@@ -1,6 +1,6 @@
 {
   "explorer.excludeGitIgnore": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "biomejs.biome",
   "github.copilot.chat.codeGeneration.useInstructionFiles": true,
   "github.copilot.chat.reviewSelection.instructions": [
     {
@@ -20,5 +20,8 @@
     ".github/instructions": true
   },
   "css.lint.unknownAtRules": "ignore",
-  "markdownlint.configFile": ".markdownlint.yaml"
+  "markdownlint.configFile": ".markdownlint.yaml",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.biome": "explicit"
+  }
 }
