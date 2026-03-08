@@ -1,10 +1,11 @@
 ---
 import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
 import { Icon } from "astro-icon/components";
 import Button from "@/components/ui/Button.astro";
 
 interface Props {
-  images: any[];
+  images: ImageMetadata[];
   projectTitle: string;
   imageAlt?: string;
 }

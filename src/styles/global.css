@@ -7,15 +7,22 @@
   --radius: 0.5rem;
 
   /* Background Layers - Revamp: Pure Black Theme */
-  --background-0: hsl(0, 0%, 0%); /* pure black */
-  --background-1: hsl(0, 0%, 5%); /* pure black */
-  --background-2: hsl(0, 0%, 10%); /* very dark gray for contrast */
+  --background-0: hsl(0, 0%, 0%);
+  /* pure black */
+  --background-1: hsl(0, 0%, 5%);
+  /* pure black */
+  --background-2: hsl(0, 0%, 10%);
+  /* very dark gray for contrast */
 
   /* Text - Revamp: White with gray variants */
-  --foreground-0: hsl(0, 0%, 100%); /* primary text */
-  --foreground-1: hsl(0, 0%, 80%); /* secondary text */
-  --foreground-2: hsl(0, 0%, 60%); /* muted / meta text */
-  --foreground-3: hsl(0, 0%, 40%); /* subtle text / numbers */
+  --foreground-0: hsl(0, 0%, 100%);
+  /* primary text */
+  --foreground-1: hsl(0, 0%, 80%);
+  /* secondary text */
+  --foreground-2: hsl(0, 0%, 60%);
+  /* muted / meta text */
+  --foreground-3: hsl(0, 0%, 40%);
+  /* subtle text / numbers */
 
   /* Accent - Revamp: White only */
   --accent: hsl(0, 0%, 100%);
@@ -246,8 +253,8 @@
 
 html.dark .astro-code,
 html.dark .astro-code span {
-  color: var(--astro-code-foreground) !important;
-  background-color: var(--astro-code-background) !important;
+  color: var(--astro-code-foreground);
+  background-color: var(--astro-code-background);
 }
 
 /* Stripe Patterns */
@@ -274,6 +281,6 @@ html.dark .astro-code span {
 /* Typography Utility Classes */
 @layer utilities {
   .text-section-heading {
-    @apply text-foreground-0 mb-8 text-left font-mono text-[clamp(3rem,10vw,7rem)] leading-[0.9] font-bold tracking-tighter uppercase;
+    @apply text-foreground-0 mb-8 text-left font-mono text-[clamp(3rem, 10vw, 7rem)] leading-[0.9] font-bold tracking-tighter uppercase;
   }
 }
