@@ -1,6 +1,6 @@
 ---
 // Header Component - Navigation and branding
-import { navItems } from "@data/config";
+import { navItems, SITE } from "@data/config";
 import { Icon } from "astro-icon/components";
 import MobileMenuPanel from "@/components/core/MobileMenuPanel.astro";
 import MobileMenuToggle from "@/components/core/MobileMenuToggle.astro";
@@ -14,7 +14,7 @@ import Button from "@/components/ui/Button.astro";
     <div class="flex items-center justify-between">
       <!-- Logo -->
       <a href="/">
-        <Button size="icon-sm" variant="default">
+        <Button size="icon" variant="default">
           <Icon name="lightning" />
         </Button>
       </a>
@@ -30,18 +30,24 @@ import Button from "@/components/ui/Button.astro";
                 target={item.blank ? "_blank" : undefined}
                 rel={item.blank ? "noopener noreferrer" : undefined}
               >
-                <Button variant="ghost" size="sm">
-                  {item.label}
-                </Button>
+                <Button variant="ghost">{item.label}</Button>
               </a>
             ))
         }
       </div>
 
-      <!-- Desktop CTA Button -->
-      <a href="/contact/" class="hidden md:block">
-        <Button size="sm" class="uppercase">GET IN TOUCH</Button>
-      </a>
+      <div class="hidden items-center gap-2 md:flex">
+        <a href={SITE.repo} target="_blank" class="hidden md:block">
+          <Button size="icon" variant="secondary">
+            <Icon name="github" />
+          </Button>
+        </a>
+        <a href="https://rajeshdas.dev" target="_blank" class="hidden md:block">
+          <Button size="icon" variant="secondary">
+            <Icon name="user" />
+          </Button>
+        </a>
+      </div>
 
       <!-- Mobile Menu Toggle -->
       <MobileMenuToggle />

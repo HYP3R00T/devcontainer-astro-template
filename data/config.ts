@@ -27,38 +27,20 @@ export const navItems: NavItem[] = [
 export const SOCIAL_LINKS = [
   {
     name: 'github',
-    href: 'https://github.com/HYP3R00T/',
-    linkTitle: `Checkout my GitHub profile`,
-    active: true,
-  },
-]
-
-// Footer navigation items
-export const footerNavigation = [
-  // { href: "#skills", label: "Skills" },
-  // { href: "#projects", label: "Projects" },
-  { href: '/post/', label: 'Blog' },
-  // { href: "#contact", label: "Contact" },
-]
-
-// Footer social links
-export const footerSocialLinks = [
-  {
-    name: 'github',
     href: 'https://github.com/HYP3R00T',
-    label: 'GitHub',
+    active: true,
     linkTitle: 'Visit my GitHub profile',
   },
   {
     name: 'linkedin',
     href: 'https://linkedin.com/in/rajesh-kumar-das',
-    label: 'LinkedIn',
+    active: true,
     linkTitle: 'Connect with me on LinkedIn',
   },
   {
     name: 'mail',
     href: 'mailto:hello@rajeshdas.dev',
-    label: 'Email',
+    active: true,
     linkTitle: 'Send me an email',
   },
 ]
