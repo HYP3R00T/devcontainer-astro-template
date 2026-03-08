@@ -18,11 +18,12 @@
         "astro-build.astro-vscode",
         "bradlc.vscode-tailwindcss",
         "DavidAnson.vscode-markdownlint",
-        "EditorConfig.EditorConfig"
+        "EditorConfig.EditorConfig",
+        "github.vscode-github-actions",
+        "unifiedjs.vscode-mdx",
+        "esbenp.prettier-vscode",
+        "hyperoot.settings-organizer"
       ]
     }
-  },
-  "forwardPorts": [
-    4321
-  ]
+  }
 }
