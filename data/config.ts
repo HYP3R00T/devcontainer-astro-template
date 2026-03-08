@@ -17,11 +17,7 @@ export const SITE: SiteConfig = {
 }
 
 export const navItems: NavItem[] = [
-  { href: '/', label: 'Blog' },
-  // { href: "https://hyperoot.dev/", label: "Projects", blank: true },
-  { href: '/', label: 'Projects' },
   { href: '/components', label: 'Components' },
-  { href: '/', label: 'About' },
 ]
 
 export const SOCIAL_LINKS = [
