@@ -1,14 +1,9 @@
 ---
+import { getCollection } from "astro:content";
 import Badge from "@/components/ui/Badge.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
-const componentLinks = [
-  { title: "Badge", href: "/components/badge" },
-  { title: "Button", href: "/components/button" },
-  { title: "Input", href: "/components/input" },
-  { title: "Label", href: "/components/label" },
-  { title: "Textarea", href: "/components/textarea" },
-];
+const components = await getCollection("components");
 ---
 
 <BaseLayout
@@ -16,7 +11,7 @@ const componentLinks = [
   description="A concise list of the custom components available in this project."
 >
   <section
-    class="relative flex items-center justify-center bg-black px-4 py-12 md:px-12"
+    class="stripe-pattern-dense relative flex items-center justify-center bg-background-0 px-4 py-12 md:px-12"
   >
     <div class="mx-auto w-full max-w-7xl">
       <!-- Greeter -->
@@ -37,13 +32,13 @@ const componentLinks = [
       <!-- All projects -->
       <div class="space-y-4">
         {
-          componentLinks.map((component) => (
+          components.map((component) => (
             <a
-              href={component.href}
+              href={`/components/${component.id}`}
               class="group border-border hover:bg-background-1 flex items-center justify-between border px-6 py-5 transition-colors"
             >
               <span class="text-foreground-0 text-lg font-semibold">
-                {component.title}
+                {component.data.title}
               </span>
               <span class="text-foreground-2 text-xs tracking-widest uppercase">
                 view component
