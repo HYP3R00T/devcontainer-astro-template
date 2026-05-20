@@ -6,8 +6,7 @@ export const SITE: SiteConfig = {
   author: 'Rajesh',
   repo: 'https://github.com/HYP3R00T/devcontainer-astro-template',
   title: 'Template',
-  description:
-    'A starter template for Astro projects with mise, Biome, pre-commit hooks, and GitHub Actions.',
+  description: 'A starter template for Astro projects with mise, Biome, pre-commit hooks, and GitHub Actions.',
   image: placeholder1,
   imageAlt: 'Check out webdevtemplate.hyperoot.dev',
   contentType: 'Portfolio',
@@ -16,9 +15,7 @@ export const SITE: SiteConfig = {
   lang: 'en',
 }
 
-export const navItems: NavItem[] = [
-  { href: '/components', label: 'Components' },
-]
+export const navItems: NavItem[] = [{ href: '/components', label: 'Components' }]
 
 export const SOCIAL_LINKS = [
   {
