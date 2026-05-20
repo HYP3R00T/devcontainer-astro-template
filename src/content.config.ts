@@ -14,6 +14,4 @@ const components = defineCollection({
   }),
 })
 
-export const collections = {
-  components,
-}
+export const collections = { components }

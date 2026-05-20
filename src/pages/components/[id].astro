@@ -16,14 +16,9 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 ---
 
-<BaseLayout
-  title={`${entry.data.title} - Components`}
-  description={entry.data.description}
->
-  <section
-    class="relative flex items-center justify-center bg-background-0 px-4 py-12 md:px-12"
-  >
-    <div class="mx-auto w-full max-w-4xl">
+<BaseLayout title={`${entry.data.title} - Components`} description={entry.data.description}>
+  <section class="relative flex items-center justify-center px-4 md:px-12">
+    <div class="mx-auto w-full max-w-5xl my-16">
       <header class="mb-6">
         <h1 class="text-section-heading my-8">
           {entry.data.title}
@@ -36,10 +31,6 @@ const { Content } = await render(entry);
           )
         }
       </header>
-      <div
-        class="h-1 w-full bg-linear-90 from-accent via-accent to-accent-3 bg-accent mb-8"
-      >
-      </div>
       <div class="prose">
         <Content />
       </div>

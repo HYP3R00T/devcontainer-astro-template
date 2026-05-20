@@ -4,8 +4,11 @@ description: "Small status/label badge component."
 category: "ui"
 ---
 
-import BadgeComponent from "@/components/ui/Badge.astro";
+import { Badge } from "@/components/ui/badge";
 
-<BadgeComponent variant="default">Default</BadgeComponent>
-<BadgeComponent variant="outline">Outline</BadgeComponent>
-<BadgeComponent variant="accent">Accent</BadgeComponent>
+<Badge variant="default">default</Badge>
+<Badge variant="secondary">secondary</Badge>
+<Badge variant="destructive">destructive</Badge>
+<Badge variant="outline">outline</Badge>
+<Badge variant="ghost">ghost</Badge>
+<Badge variant="link">link</Badge>
