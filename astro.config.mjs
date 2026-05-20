@@ -8,7 +8,7 @@ import AutoImport from 'astro-auto-import'
 import icon from 'astro-icon'
 
 export default defineConfig({
-  site: 'https://rajeshdas.dev',
+  site: 'https://webdevtemplate.hyperoot.dev',
   prefetch: true,
 
   markdown: {
