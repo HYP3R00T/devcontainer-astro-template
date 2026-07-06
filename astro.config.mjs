@@ -1,5 +1,6 @@
 // @ts-check
 
+import { unified } from '@astrojs/markdown-remark'
 import mdx from '@astrojs/mdx'
 import react from '@astrojs/react'
 import tailwindcss from '@tailwindcss/vite'
@@ -10,8 +11,10 @@ import icon from 'astro-icon'
 export default defineConfig({
   site: 'https://webdevtemplate.hyperoot.dev',
   prefetch: true,
+  compressHTML: true,
 
   markdown: {
+    processor: unified(),
     shikiConfig: {
       theme: 'poimandres',
     },
