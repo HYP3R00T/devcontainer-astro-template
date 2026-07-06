@@ -2,8 +2,22 @@
 title: "Badge"
 description: "Small status/label badge component."
 category: "ui"
+sourcePath: "src/components/ui/badge.tsx"
 ---
 
+import BadgeDemo from "@/components/ui-demo/BadgeDemo.astro";
+
+## Example
+
+<BadgeDemo />
+
+## Usage
+
+Badges are useful for small labels, state markers, and compact metadata that should not compete with the main content.
+
+## Code
+
+```tsx
 import { Badge } from "@/components/ui/badge";
 
 <Badge variant="default">default</Badge>
@@ -12,3 +26,8 @@ import { Badge } from "@/components/ui/badge";
 <Badge variant="outline">outline</Badge>
 <Badge variant="ghost">ghost</Badge>
 <Badge variant="link">link</Badge>
+```
+
+## Notes
+
+Start with `default` or `secondary` for most cases, and reserve `destructive` for warnings or destructive states.

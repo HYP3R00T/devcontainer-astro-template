@@ -1,6 +1,7 @@
 ---
-import { getCollection, getEntry, render } from "astro:content";
+import { getCollection, render } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Icon } from "astro-icon/components";
 
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
@@ -17,20 +18,35 @@ const { Content } = await render(entry);
 ---
 
 <BaseLayout title={`${entry.data.title} - Components`} description={entry.data.description}>
-  <section class="relative flex items-center justify-center px-4 md:px-12">
-    <div class="mx-auto w-full max-w-5xl my-16">
-      <header class="mb-6">
-        <h1 class="text-section-heading my-8">
+  <section class="px-4 pt-10 pb-20 md:px-8 md:pt-14 md:pb-24">
+    <div class="mx-auto w-full max-w-3xl">
+      <a
+        href={`/components#component-${entry.id}`}
+        class="inline-flex items-center gap-2 rounded-md border border-border/80 bg-background-1 px-3 py-2 font-mono text-xs tracking-[0.18em] text-foreground-1 uppercase transition-colors hover:bg-background-0 hover:text-accent-1"
+      >
+        <Icon name="arrow-left" class="size-4" />
+        Components
+      </a>
+
+      <header class="mt-8 mb-12">
+        <h1
+          class="mt-5 font-display text-5xl leading-none font-semibold tracking-tighter text-foreground-0 sm:text-6xl"
+          transition:name={`component-title-${entry.id}`}
+        >
           {entry.data.title}
         </h1>
         {
           entry.data.description && (
-            <p class="text-foreground-1 max-w-2xl space-y-6 text-base leading-relaxed md:text-lg">
+            <p
+              class="mt-6 max-w-2xl text-base leading-relaxed text-foreground-1 md:text-lg"
+              transition:name={`component-description-${entry.id}`}
+            >
               {entry.data.description}
             </p>
           )
         }
       </header>
+
       <div class="prose">
         <Content />
       </div>

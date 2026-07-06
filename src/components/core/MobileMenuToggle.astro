@@ -23,18 +23,14 @@ import { Menu, X } from "lucide-react";
 
     const iconOpen = toggleBtn.querySelector("[data-icon-open]");
     const iconClose = toggleBtn.querySelector("[data-icon-close]");
-    const panelCloseBtn = menu.querySelector("[data-mobile-menu-close]");
+    const headerShell = document.querySelector("[data-header-shell]");
+    const headerNav = document.querySelector("[data-header-nav]");
 
-    // position panel under header
-    const header = document.querySelector("header");
-    const applyPanelPosition = () => {
-      const headerHeight = header ? header.getBoundingClientRect().height : 0;
-      (menu as HTMLElement).style.top = `${headerHeight}px`;
-      (menu as HTMLElement).style.bottom = "0";
+    const syncPanelPosition = () => {
+      if (!(menu instanceof HTMLElement)) return;
+      const navRect = headerNav instanceof HTMLElement ? headerNav.getBoundingClientRect() : null;
+      menu.style.top = navRect ? `${navRect.bottom}px` : "0px";
     };
-
-    applyPanelPosition();
-    window.addEventListener("resize", applyPanelPosition);
 
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setOpen(false);
@@ -46,27 +42,37 @@ import { Menu, X } from "lucide-react";
       (toggleBtn as HTMLElement).setAttribute("aria-expanded", String(open));
       iconOpen && iconOpen.classList.toggle("hidden", open);
       iconClose && iconClose.classList.toggle("hidden", !open);
+      if (headerShell instanceof HTMLElement) headerShell.dataset.menuOpen = String(open);
+      if (headerNav instanceof HTMLElement) headerNav.dataset.menuOpen = String(open);
 
       if (open) {
+        syncPanelPosition();
         document.addEventListener("keydown", onKey);
-        (panelCloseBtn as HTMLElement | null)?.focus();
         document.dispatchEvent(new CustomEvent("mobile-menu:opened"));
       } else {
+        if (headerShell instanceof HTMLElement) headerShell.dataset.menuOpen = "false";
+        if (headerNav instanceof HTMLElement) headerNav.dataset.menuOpen = "false";
         document.removeEventListener("keydown", onKey);
         (toggleBtn as HTMLElement).focus();
         document.dispatchEvent(new CustomEvent("mobile-menu:closed"));
       }
     }
 
-    toggleBtn.addEventListener("click", () => setOpen(menu.getAttribute("data-open") !== "true"));
-    panelCloseBtn && panelCloseBtn.addEventListener("click", () => setOpen(false));
+    syncPanelPosition();
+    window.addEventListener("resize", syncPanelPosition, { passive: true });
 
+    toggleBtn.addEventListener("click", () => setOpen(menu.getAttribute("data-open") !== "true"));
     menu.addEventListener("click", (e) => {
       const target = e.target;
       if (!(target instanceof Element)) return;
-      if (target === menu) return setOpen(false);
-      const isCloseButton = !!target.closest("[data-mobile-menu-close]");
-      if (!isCloseButton && (target.closest("a") || target.closest("button"))) setOpen(false);
+      if (target.closest("a") || target.closest("button")) setOpen(false);
     });
+
+    document.addEventListener("astro:before-swap", () => {
+      if (headerShell instanceof HTMLElement) headerShell.dataset.menuOpen = "false";
+      if (headerNav instanceof HTMLElement) headerNav.dataset.menuOpen = "false";
+      document.removeEventListener("keydown", onKey);
+      window.removeEventListener("resize", syncPanelPosition);
+    }, { once: true });
   });
 </script>

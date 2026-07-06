@@ -1,0 +1,21 @@
+---
+import DemoSurface from "@/components/ui-demo/DemoSurface.astro"
+import SegmentedTabs from "@/components/common/SegmentedTabs"
+---
+
+<DemoSurface title="Segmented Tabs" description="Small state switcher for closely related views or panels.">
+  <div class="space-y-4">
+    <SegmentedTabs
+      items={[
+        { value: "preview", label: "Preview" },
+        { value: "usage", label: "Usage" },
+        { value: "notes", label: "Notes" },
+      ]}
+      activeValue="preview"
+      ariaLabel="Segmented tabs demo"
+      group="segmented-demo"
+      client:load
+    />
+    <p class="text-sm leading-relaxed text-foreground-2">Pair this control with `data-tab-*` panels when you need simple view switching.</p>
+  </div>
+</DemoSurface>

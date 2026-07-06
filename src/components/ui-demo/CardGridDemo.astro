@@ -1,0 +1,21 @@
+---
+import DemoSurface from "@/components/ui-demo/DemoSurface.astro"
+import CardGrid from "@/components/common/CardGrid.astro"
+---
+
+<DemoSurface title="Card Grid" description="Minimal bordered wrapper for lists, references, and stacked navigation items.">
+  <div class="grid gap-0 sm:grid-cols-2">
+    <CardGrid>
+      <div class="space-y-2">
+        <p class="font-display text-xl text-foreground-0">Reference Card</p>
+        <p class="text-sm leading-relaxed text-foreground-2">Use the wrapper when layout already controls spacing.</p>
+      </div>
+    </CardGrid>
+    <CardGrid>
+      <div class="space-y-2">
+        <p class="font-display text-xl text-foreground-0">Navigation Card</p>
+        <p class="text-sm leading-relaxed text-foreground-2">The hover treatment stays subtle and consistent across lists.</p>
+      </div>
+    </CardGrid>
+  </div>
+</DemoSurface>

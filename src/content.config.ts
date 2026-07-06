@@ -11,6 +11,7 @@ const components = defineCollection({
     title: z.string(),
     description: z.string().optional(),
     category: z.string().optional(),
+    sourcePath: z.string().optional(),
   }),
 })
 

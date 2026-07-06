@@ -1,0 +1,11 @@
+---
+import DemoSurface from "@/components/ui-demo/DemoSurface.astro"
+import { ModeToggle } from "@/components/core/ModeToggle"
+---
+
+<DemoSurface title="Mode Toggle" description="The active shell toggle used by the header and mobile menu.">
+  <div class="flex items-center gap-4">
+    <ModeToggle client:load />
+    <p class="text-sm leading-relaxed text-foreground-2">Click to switch between light and dark presentation.</p>
+  </div>
+</DemoSurface>

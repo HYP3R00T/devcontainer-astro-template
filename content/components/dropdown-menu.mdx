@@ -1,0 +1,51 @@
+---
+title: "Dropdown Menu"
+description: "Composable menu primitive for contextual actions and grouped commands."
+category: "ui"
+sourcePath: "src/components/ui/dropdown-menu.tsx"
+---
+
+import DropdownMenuDemo from "@/components/ui-demo/DropdownMenuDemo";
+
+## Example
+
+<DropdownMenuDemo client:load />
+
+## Usage
+
+`DropdownMenu` is built on Radix primitives and provides the shared menu surface used for overlays, grouped actions, and contextual commands.
+
+## Code
+
+```tsx
+import { ChevronDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
+<DropdownMenu>
+  <DropdownMenuTrigger asChild>
+    <Button variant="outline">
+      Open menu
+      <ChevronDown />
+    </Button>
+  </DropdownMenuTrigger>
+  <DropdownMenuContent align="start">
+    <DropdownMenuLabel>Quick actions</DropdownMenuLabel>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem>Profile</DropdownMenuItem>
+    <DropdownMenuItem>Settings</DropdownMenuItem>
+    <DropdownMenuItem>Share</DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>
+```
+
+## Notes
+
+Use dropdowns for compact secondary actions, not for the main call to action on a page.

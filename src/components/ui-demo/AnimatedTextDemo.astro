@@ -1,0 +1,17 @@
+---
+import DemoSurface from "@/components/ui-demo/DemoSurface.astro";
+import AnimatedText from "@/components/common/AnimatedText";
+---
+
+<DemoSurface title="Animated Text" description="Use sparingly for brand moments and compact motion accents.">
+  <div class="space-y-3">
+    <AnimatedText
+      client:load
+      text="Astro Template"
+      auto={true}
+      hover={true}
+      className="font-display text-4xl text-accent-1"
+    />
+    <p class="text-sm leading-relaxed text-foreground-2">Hover the label to replay the scramble animation.</p>
+  </div>
+</DemoSurface>
