@@ -1,29 +1,19 @@
-# devcontainer-astro-template
+<!-- rumdl-disable MD041 -->
 
-> 📖 **New to this template?** Check out the [comprehensive setup guide](http://hyperoot.dev/python-template/setup) for detailed instructions on getting started.
+<div align="center">
 
----
+# DevContainer Template
+
+A minimal, reusable foundation for consistent development environments and maintainable project workflows.
+
+[Use this template](https://github.com/HYP3R00T/devcontainer-astro-template/generate)
+
+[![Quality Gate](https://img.shields.io/github/actions/workflow/status/HYP3R00T/devcontainer-astro-template/ci.yaml?branch=main&style=for-the-badge&label=Quality%20Gate&logo=githubactions)](https://github.com/HYP3R00T/devcontainer-astro-template/actions/workflows/ci.yaml)
+[![License: MIT](https://img.shields.io/github/license/HYP3R00T/devcontainer-template?style=for-the-badge&label=License)](LICENSE)
+
+</div>
 
 A starter template for Astro projects with `mise`, Biome, pre-commit hooks, and GitHub Actions.
-
-## Features
-
-- Astro 5 setup with TypeScript support
-- Biome for formatting and linting
-- `mise` for toolchain and task management
-- Pre-commit hooks for local quality checks
-- GitHub Actions workflow with Biome CI linting
-
-## Installation
-
-```bash
-# Clone your repository
-git clone https://github.com/HYP3R00T/devcontainer-astro-template.git
-cd devcontainer-astro-template
-
-# Install dependencies
-pnpm install
-```
 
 ## Development
 
@@ -32,39 +22,22 @@ pnpm install
 mise run dev
 ```
 
-## Linting and Formatting
+## Use this template
 
-```bash
-# Check with Biome
-mise run lint
+1. Select [**Use this template**](https://github.com/HYP3R00T/devcontainer-astro-template/generate) and create a repository.
+2. Open the new repository in Visual Studio Code.
+3. Run **Dev Containers: Reopen in Container** from the Command Palette.
+4. Wait for the setup to install the declared tools and configure the Git hooks.
+5. Add the runtimes, dependencies, checks, and tasks required by the project.
 
-# Apply safe fixes
-mise run lint-fix
-
-# Format files
-mise run format
-```
-
-## Pre-commit
-
-This repository uses pre-commit and includes Biome hooks.
-
-```bash
-# Install git hooks locally
-pre-commit install
-
-# Run all hooks manually
-pre-commit run --all-files
-```
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'feat: add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+For environment requirements and verification commands, read the [documentation](https://hyp3r00t.github.io/devcontainer-astro-template/).
 
 ## License
 
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+This project is available under the [MIT License](LICENSE).
+
+<div align="center">
+
+Developed with ❤️ by [HYP3R00T](https://github.com/HYP3R00T)
+
+</div>
