@@ -5,15 +5,9 @@ import { buttonVariants } from "@/components/ui/button";
 import Carousel from "@/components/common/Carousel";
 import PageHero from "@/components/common/PageHero.astro";
 import { Icon } from "astro-icon/components";
-import placeholder1 from "@/assets/placeholder1.png";
-import placeholder2 from "@/assets/placeholder2.png";
-import placeholder3 from "@/assets/placeholder3.png";
-import placeholder4 from "@/assets/placeholder4.png";
-import placeholder5 from "@/assets/placeholder5.png";
+import placeholder from "@/assets/placeholder.png";
 import { featuredProjects } from "@data/homepage";
 import { SITE } from "@data/config";
-
-const projectImages = [placeholder1, placeholder2, placeholder3, placeholder4, placeholder5] as const;
 ---
 
 <PageHero id="hero" dataHomeSection bottomRightClass="w-full">
@@ -63,7 +57,7 @@ const projectImages = [placeholder1, placeholder2, placeholder3, placeholder4, p
   <Fragment slot="bottomRight">
     <Carousel client:load label="Starter paths" itemSelector="[data-project-card]">
       {
-        featuredProjects.map((project, index) => (
+        featuredProjects.map((project) => (
           <a
             href={project.href}
             target={project.href.startsWith("http") ? "_blank" : undefined}
@@ -74,7 +68,7 @@ const projectImages = [placeholder1, placeholder2, placeholder3, placeholder4, p
           >
             <div class="aspect-video overflow-hidden rounded-md bg-background-1">
               <Image
-                src={projectImages[index] ?? placeholder1}
+                src={placeholder}
                 alt={`${project.title} preview`}
                 class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 widths={[480, 720, 960]}
