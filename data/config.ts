@@ -7,7 +7,7 @@ export const SITE: SiteConfig = {
   repo: "https://github.com/HYP3R00T/devcontainer-astro-template",
   title: "Astro Template",
   description:
-    "A reusable Astro starter with stronger layout primitives, a component index, and a cleaner foundation for content-driven projects.",
+    "A reusable Astro starter with stronger layout primitives, and a cleaner foundation for content-driven projects.",
   image: placeholder,
   imageAlt: "Preview of the Astro template starter",
   contentType: "Website",
@@ -16,7 +16,7 @@ export const SITE: SiteConfig = {
   lang: "en",
 }
 
-export const navItems: NavItem[] = [{ href: "/components", label: "Components" }]
+export const navItems: NavItem[] = [{ href: "/", label: "Home" }]
 
 export const SOCIAL_LINKS = [
   {
