@@ -1,41 +1,37 @@
 // @ts-check
 
-import { unified } from '@astrojs/markdown-remark'
-import mdx from '@astrojs/mdx'
-import react from '@astrojs/react'
-import tailwindcss from '@tailwindcss/vite'
-import { defineConfig } from 'astro/config'
-import AutoImport from 'astro-auto-import'
-import icon from 'astro-icon'
+import { unified } from "@astrojs/markdown-remark"
+import mdx from "@astrojs/mdx"
+import react from "@astrojs/react"
+import tailwindcss from "@tailwindcss/vite"
+import { defineConfig } from "astro/config"
+import icon from "astro-icon"
 
 export default defineConfig({
-  site: 'https://webdevtemplate.hyperoot.dev',
+  site: "https://webdevtemplate.hyperoot.dev",
   prefetch: true,
   compressHTML: true,
 
   markdown: {
     processor: unified(),
     shikiConfig: {
-      theme: 'poimandres',
+      theme: "poimandres",
     },
   },
 
   integrations: [
     icon({
-      iconDir: 'src/assets/icons',
+      iconDir: "src/assets/icons",
       svgoOptions: {
         plugins: [
           {
-            name: 'convertColors',
+            name: "convertColors",
             params: {
               currentColor: true,
             },
           },
         ],
       },
-    }),
-    AutoImport({
-      imports: ['./src/components/core/Video.astro'],
     }),
     mdx(),
     react(),

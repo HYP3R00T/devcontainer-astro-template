@@ -1,36 +1,36 @@
-import { Moon, Sun } from 'lucide-react'
-import * as React from 'react'
+import { Moon, Sun } from "lucide-react"
+import * as React from "react"
 
-import { Button } from '@/components/ui/button'
+import { Button } from "@/components/ui/button"
 
-type Theme = 'light' | 'dark' | 'system'
+type Theme = "light" | "dark" | "system"
 
-const STORAGE_KEY = 'theme'
+const STORAGE_KEY = "theme"
 
-function getSystemTheme(): Exclude<Theme, 'system'> {
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+function getSystemTheme(): Exclude<Theme, "system"> {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
 }
 
-function resolveTheme(theme: Theme): Exclude<Theme, 'system'> {
-  return theme === 'system' ? getSystemTheme() : theme
+function resolveTheme(theme: Theme): Exclude<Theme, "system"> {
+  return theme === "system" ? getSystemTheme() : theme
 }
 
 function applyTheme(theme: Theme) {
   const resolvedTheme = resolveTheme(theme)
-  const isDark = resolvedTheme === 'dark'
+  const isDark = resolvedTheme === "dark"
 
-  document.documentElement.classList.toggle('dark', isDark)
+  document.documentElement.classList.toggle("dark", isDark)
   document.documentElement.style.colorScheme = resolvedTheme
 }
 
 export function ModeToggle() {
-  const [theme, setThemeState] = React.useState<Theme>('system')
-  const [resolvedTheme, setResolvedTheme] = React.useState<Exclude<Theme, 'system'>>('light')
+  const [theme, setThemeState] = React.useState<Theme>("system")
+  const [resolvedTheme, setResolvedTheme] = React.useState<Exclude<Theme, "system">>("light")
 
   React.useEffect(() => {
     const savedTheme = localStorage.getItem(STORAGE_KEY)
     const nextTheme: Theme =
-      savedTheme === 'light' || savedTheme === 'dark' || savedTheme === 'system' ? savedTheme : 'system'
+      savedTheme === "light" || savedTheme === "dark" || savedTheme === "system" ? savedTheme : "system"
 
     setThemeState(nextTheme)
     setResolvedTheme(resolveTheme(nextTheme))
@@ -42,24 +42,24 @@ export function ModeToggle() {
     setResolvedTheme(resolveTheme(theme))
     localStorage.setItem(STORAGE_KEY, theme)
 
-    if (theme !== 'system') return
+    if (theme !== "system") return
 
-    const media = window.matchMedia('(prefers-color-scheme: dark)')
+    const media = window.matchMedia("(prefers-color-scheme: dark)")
     const onChange = () => {
-      applyTheme('system')
+      applyTheme("system")
       setResolvedTheme(getSystemTheme())
     }
 
-    media.addEventListener('change', onChange)
-    return () => media.removeEventListener('change', onChange)
+    media.addEventListener("change", onChange)
+    return () => media.removeEventListener("change", onChange)
   }, [theme])
 
   const toggleTheme = () => {
     const currentTheme = resolveTheme(theme)
-    setThemeState(currentTheme === 'dark' ? 'light' : 'dark')
+    setThemeState(currentTheme === "dark" ? "light" : "dark")
   }
 
-  const nextTheme = resolvedTheme === 'dark' ? 'light' : 'dark'
+  const nextTheme = resolvedTheme === "dark" ? "light" : "dark"
 
   return (
     <Button

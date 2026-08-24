@@ -1,4 +1,4 @@
-import type { ImageMetadata } from 'astro'
+import type { ImageMetadata } from "astro"
 
 // For HeadSEO.astro
 export interface HeadSEOProps {
