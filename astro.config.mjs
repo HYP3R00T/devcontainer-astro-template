@@ -6,6 +6,10 @@ import react from "@astrojs/react"
 import tailwindcss from "@tailwindcss/vite"
 import { defineConfig } from "astro/config"
 import icon from "astro-icon"
+import rehypeCodeBlocks from "@/lib/rehype-code-blocks.mjs"
+
+/** @type {import("@astrojs/markdown-remark").RehypePlugins} */
+const rehypePlugins = [[rehypeCodeBlocks, { theme: "houston" }]]
 
 export default defineConfig({
   site: "https://webdevtemplate.hyperoot.dev",
@@ -13,10 +17,8 @@ export default defineConfig({
   compressHTML: true,
 
   markdown: {
-    processor: unified(),
-    shikiConfig: {
-      theme: "poimandres",
-    },
+    processor: unified({ rehypePlugins }),
+    syntaxHighlight: false,
   },
 
   integrations: [

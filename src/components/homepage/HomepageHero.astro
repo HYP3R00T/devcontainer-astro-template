@@ -3,17 +3,13 @@ import Section from "@/components/common/Section.astro";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { SITE } from "@data/config";
+import { Icon } from "astro-icon/components";
 
 const stack = ["Astro 7", "MDX", "React 19", "Tailwind 4", "shadcn/ui"];
 ---
 
 <Section frameClass="grid lg:grid-cols-[minmax(0,1.45fr)_minmax(20rem,0.55fr)]">
   <div class="border-b border-border px-5 py-16 md:px-10 md:py-24 lg:border-r lg:border-b-0 lg:px-15 lg:py-28">
-    <div class="flex items-center gap-3 font-mono text-xs tracking-[0.14em] text-foreground-3 uppercase">
-      <span class="size-2 bg-green-0" aria-hidden="true"></span>
-      Ready to shape
-    </div>
-
     <h1 class="mt-8 max-w-4xl font-display text-5xl leading-[0.94] font-medium tracking-[-0.045em] text-foreground-0 sm:text-6xl md:text-7xl lg:text-8xl">
       Start with structure.<br />Build with intent.
     </h1>
@@ -37,7 +33,7 @@ const stack = ["Astro 7", "MDX", "React 19", "Tailwind 4", "shadcn/ui"];
         class={cn(buttonVariants({ variant: "outline", size: "lg" }), "h-11 px-5")}
       >
         View source
-        <span aria-hidden="true">↗</span>
+        <Icon name="arrow-up-right" class="size-4" aria-hidden="true" />
       </a>
     </div>
   </div>
