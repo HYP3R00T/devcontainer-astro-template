@@ -9,7 +9,17 @@ import icon from "astro-icon"
 import rehypeCodeBlocks from "@/lib/rehype-code-blocks.mjs"
 
 /** @type {import("@astrojs/markdown-remark").RehypePlugins} */
-const rehypePlugins = [[rehypeCodeBlocks, { theme: "houston" }]]
+const rehypePlugins = [
+  [
+    rehypeCodeBlocks,
+    {
+      theme: {
+        light: "vitesse-light",
+        dark: "houston",
+      },
+    },
+  ],
+]
 
 export default defineConfig({
   site: "https://webdevtemplate.hyperoot.dev",
