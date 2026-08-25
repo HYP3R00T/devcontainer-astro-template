@@ -3,6 +3,7 @@ import Section from "@/components/common/Section.astro";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { SITE } from "@data/config";
+import { Icon } from "astro-icon/components";
 
 const steps = [
   { command: "Use template", copy: "Create a clean repository from the maintained starting point." },
@@ -50,7 +51,7 @@ const steps = [
         )}
       >
         Start from the template
-        <span aria-hidden="true">↗</span>
+        <Icon name="arrow-up-right" class="size-4" aria-hidden="true" />
       </a>
     </div>
   </div>
