@@ -1,16 +1,6 @@
 ---
 import Section from "@/components/common/Section.astro";
-
-const componentExample = `---
-import BaseLayout from "@/layouts/BaseLayout.astro"
-import FeatureGrid from "@/components/FeatureGrid.astro"
-
-const features = await getCollection("features")
----
-
-<BaseLayout title="Build something useful">
-  <FeatureGrid items={features} />
-</BaseLayout>`;
+import HomepageCodeSample from "@/components/homepage/HomepageCodeSample.mdx";
 ---
 
 <Section id="example" frameClass="grid lg:grid-cols-[minmax(18rem,0.4fr)_minmax(0,0.6fr)]">
@@ -36,17 +26,9 @@ const features = await getCollection("features")
     </dl>
   </div>
 
-  <div class="bg-background-1 p-3 md:p-6 lg:p-8">
-    <div class="overflow-hidden border border-border bg-background-0">
-      <div class="flex items-center justify-between border-b border-border px-4 py-3">
-        <div class="flex items-center gap-2" aria-hidden="true">
-          <span class="size-2 rounded-full bg-red-0"></span>
-          <span class="size-2 rounded-full bg-yellow-0"></span>
-          <span class="size-2 rounded-full bg-green-0"></span>
-        </div>
-        <span class="font-mono text-xs text-foreground-3">src/pages/index.astro</span>
-      </div>
-      <pre class="overflow-x-auto p-5 text-sm leading-7 text-foreground-1 md:p-8"><code>{componentExample}</code></pre>
+  <div class="px-5 py-12 md:px-10 lg:px-12 lg:py-16">
+    <div class="prose">
+      <HomepageCodeSample />
     </div>
   </div>
 </Section>
