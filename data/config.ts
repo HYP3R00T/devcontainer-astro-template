@@ -1,18 +1,15 @@
 import placeholder from "@/assets/placeholder.png"
-import type { NavItem, SiteConfig } from "@/lib/types"
+import type { NavItem, SiteConfig, SocialLink } from "@/lib/types"
 
 export const SITE: SiteConfig = {
-  website: "https://webdevtemplate.hyperoot.dev",
-  author: "Rajesh",
   repo: "https://github.com/HYP3R00T/devcontainer-astro-template",
   title: "Astro Template",
   description:
     "A reusable Astro starter with stronger layout primitives, and a cleaner foundation for content-driven projects.",
   image: placeholder,
   imageAlt: "Preview of the Astro template starter",
-  contentType: "Website",
+  contentType: "website",
   twitterHandle: "@HYP3R00T",
-  pageSize: 10,
   lang: "en",
 }
 
@@ -37,4 +34,4 @@ export const SOCIAL_LINKS = [
     active: false,
     linkTitle: "Send an email",
   },
-]
+] satisfies SocialLink[]

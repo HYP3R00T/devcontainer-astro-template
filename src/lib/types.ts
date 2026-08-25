@@ -1,35 +1,29 @@
 import type { ImageMetadata } from "astro"
 
-// For HeadSEO.astro
+export type SEOImage = string | ImageMetadata
+
 export interface HeadSEOProps {
-  title: string
-  description: string
-  image: string | ImageMetadata
-  imageAlt: string
-  contentType: string
+  title?: string
+  description?: string
+  image?: SEOImage
+  imageAlt?: string
+  contentType?: "website" | "article"
   noIndex?: boolean
 }
 
-// For src/layouts/BaseLayout.astro
-// Accepts any subset of SEO props; HeadSEO provides sensible defaults.
-export interface BaseLayoutProps extends Partial<HeadSEOProps> {}
+export type BaseLayoutProps = HeadSEOProps
 
-// Site-level configuration
 export interface SiteConfig {
-  website: string
-  author: string
   repo: string
   title: string
   description: string
-  image: string | ImageMetadata
-  imageAlt?: string
-  contentType: string
-  twitterHandle?: string
-  pageSize?: number
+  image: SEOImage
+  imageAlt: string
+  contentType: "website" | "article"
+  twitterHandle: string
   lang: string
 }
 
-// Navigation item in the header navigation
 export interface NavItem {
   href: string
   label: string
@@ -37,25 +31,9 @@ export interface NavItem {
   blank?: boolean
 }
 
-// Footer navigation item
-export interface FooterNavItem {
-  href: string
-  label: string
-  blank?: boolean
-}
-
-// Social media link configuration
-export interface SocialObjects {
+export interface SocialLink {
   name: string
   href: string
   active: boolean
   linkTitle?: string
-}
-
-// Footer social link configuration
-export interface FooterSocialLink {
-  name: string
-  href: string
-  label: string
-  linkTitle: string
 }
