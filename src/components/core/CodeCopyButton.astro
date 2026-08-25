@@ -4,6 +4,31 @@
     margin-block: 2rem;
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
+    background-color: var(--shiki-light-bg);
+    color: var(--shiki-light);
+  }
+
+  :global(.code-block code[data-theme*=" "]),
+  :global(.code-block code[data-theme*=" "] span) {
+    background-color: var(--shiki-light-bg) !important;
+    color: var(--shiki-light) !important;
+    font-style: var(--shiki-light-font-style);
+    font-weight: var(--shiki-light-font-weight);
+    text-decoration: var(--shiki-light-text-decoration);
+  }
+
+  :global(.dark .code-block) {
+    background-color: var(--shiki-dark-bg);
+    color: var(--shiki-dark);
+  }
+
+  :global(.dark .code-block code[data-theme*=" "]),
+  :global(.dark .code-block code[data-theme*=" "] span) {
+    background-color: var(--shiki-dark-bg) !important;
+    color: var(--shiki-dark) !important;
+    font-style: var(--shiki-dark-font-style);
+    font-weight: var(--shiki-dark-font-weight);
+    text-decoration: var(--shiki-dark-text-decoration);
   }
 
   :global(.code-block__header) {
