@@ -14,7 +14,7 @@ const rehypePlugins = [
     rehypeCodeBlocks,
     {
       theme: {
-        light: "vitesse-light",
+        light: "github-light",
         dark: "houston",
       },
     },
