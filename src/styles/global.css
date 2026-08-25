@@ -5,32 +5,32 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Warm neutral surfaces with golden-ratio lightness intervals */
-  --background-0: oklch(0.9800 0.006 85);
-  --background-1: oklch(0.9543 0.006 85);
-  --background-2: oklch(0.9126 0.006 85);
-  --background-3: oklch(0.8453 0.006 85);
+  /* Blue-neutral surfaces, from canvas to strongest separator */
+  --background-0: oklch(0.9850 0.003 255);
+  --background-1: oklch(0.9600 0.005 255);
+  --background-2: oklch(0.9200 0.007 255);
+  --background-3: oklch(0.8500 0.010 255);
 
-  /* Cool neutral text, ordered from quiet to high emphasis */
-  --foreground-3: oklch(0.5300 0.012 250);
-  --foreground-2: oklch(0.5000 0.012 250);
-  --foreground-1: oklch(0.3500 0.012 250);
-  --foreground-0: oklch(0.2000 0.012 250);
+  /* Cool ink with clear steps from metadata to display text */
+  --foreground-3: oklch(0.5600 0.015 255);
+  --foreground-2: oklch(0.4600 0.016 255);
+  --foreground-1: oklch(0.3400 0.018 255);
+  --foreground-0: oklch(0.2100 0.020 255);
 
-  /* Cyan-blue interaction family */
-  --accent-1: oklch(0.5400 0.110 245);
-  --accent-2: color-mix(in oklch, var(--accent-1), black 12%);
+  /* Focused blue interaction family */
+  --accent-1: oklch(0.5500 0.155 250);
+  --accent-2: color-mix(in oklch, var(--accent-1), black 14%);
 
-  /* Semantic and chart colors balanced for light surfaces */
-  --red-0: oklch(0.5500 0.140 25);
-  --orange-0: oklch(0.5400 0.110 55);
-  --yellow-0: oklch(0.5300 0.100 85);
-  --green-0: oklch(0.5150 0.100 150);
-  --teal-0: oklch(0.5050 0.090 180);
-  --cyan-0: oklch(0.5100 0.090 220);
-  --blue-0: oklch(0.5300 0.130 260);
-  --purple-0: oklch(0.5200 0.140 300);
-  --pink-0: oklch(0.5500 0.140 355);
+  /* Semantic colors balanced to share similar visual weight */
+  --red-0: oklch(0.5600 0.180 25);
+  --orange-0: oklch(0.6000 0.150 55);
+  --yellow-0: oklch(0.6300 0.130 90);
+  --green-0: oklch(0.5500 0.140 150);
+  --teal-0: oklch(0.5400 0.110 180);
+  --cyan-0: oklch(0.5500 0.110 220);
+  --blue-0: oklch(0.5500 0.150 260);
+  --purple-0: oklch(0.5500 0.160 300);
+  --pink-0: oklch(0.5800 0.170 350);
 
   --background: var(--background-0);
   --foreground: var(--foreground-0);
@@ -76,32 +76,32 @@
 }
 
 .dark {
-  /* Cool neutral surfaces with golden-ratio lightness intervals */
-  --background-0: oklch(0.1800 0.009 250);
-  --background-1: oklch(0.2057 0.009 250);
-  --background-2: oklch(0.2474 0.009 250);
-  --background-3: oklch(0.3147 0.009 250);
+  /* Deep blue-neutral surfaces mirroring the light hierarchy */
+  --background-0: oklch(0.1700 0.014 255);
+  --background-1: oklch(0.2050 0.014 255);
+  --background-2: oklch(0.2500 0.016 255);
+  --background-3: oklch(0.3200 0.018 255);
 
-  /* Warm primary text with cool supporting neutrals */
-  --foreground-3: oklch(0.6000 0.012 250);
+  /* Neutral light ink without the previous cream cast */
+  --foreground-3: oklch(0.6000 0.014 250);
   --foreground-2: oklch(0.7200 0.012 250);
-  --foreground-1: oklch(0.8700 0.010 85);
-  --foreground-0: oklch(0.9500 0.008 85);
+  --foreground-1: oklch(0.8600 0.010 250);
+  --foreground-0: oklch(0.9600 0.008 250);
 
-  /* Brighter cyan-blue interaction family for dark surfaces */
-  --accent-1: oklch(0.7000 0.110 240);
-  --accent-2: color-mix(in oklch, var(--accent-1), white 10%);
+  /* Brighter blue interaction family for dark surfaces */
+  --accent-1: oklch(0.7200 0.140 245);
+  --accent-2: color-mix(in oklch, var(--accent-1), white 12%);
 
-  /* Semantic and chart colors balanced for dark surfaces */
-  --red-0: oklch(0.7000 0.120 25);
-  --orange-0: oklch(0.7600 0.100 60);
-  --yellow-0: oklch(0.8200 0.100 90);
-  --green-0: oklch(0.7600 0.120 150);
-  --teal-0: oklch(0.7800 0.100 180);
-  --cyan-0: oklch(0.7800 0.090 220);
-  --blue-0: oklch(0.7000 0.110 260);
-  --purple-0: oklch(0.7200 0.120 300);
-  --pink-0: oklch(0.7200 0.120 355);
+  /* Semantic colors lifted evenly for dark-mode contrast */
+  --red-0: oklch(0.7200 0.160 25);
+  --orange-0: oklch(0.7600 0.130 55);
+  --yellow-0: oklch(0.8200 0.120 90);
+  --green-0: oklch(0.7400 0.140 150);
+  --teal-0: oklch(0.7600 0.110 180);
+  --cyan-0: oklch(0.7600 0.100 220);
+  --blue-0: oklch(0.7200 0.130 260);
+  --purple-0: oklch(0.7400 0.140 300);
+  --pink-0: oklch(0.7400 0.150 350);
 
   /* shadcn */
   --background: var(--background-0);
@@ -112,8 +112,8 @@
   --input: var(--background-3);
   --card: var(--background-1);
   --card-foreground: var(--foreground-0);
-  --popover: var(--background-2);
-  --popover-foreground: var(--foreground-1);
+  --popover: var(--background-1);
+  --popover-foreground: var(--foreground-0);
   --secondary: var(--background-1);
   --secondary-foreground: var(--foreground-0);
   --primary: var(--foreground-0);

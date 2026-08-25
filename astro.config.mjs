@@ -15,7 +15,7 @@ const rehypePlugins = [
     {
       theme: {
         light: "github-light",
-        dark: "houston",
+        dark: "github-dark-default",
       },
     },
   ],
